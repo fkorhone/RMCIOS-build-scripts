@@ -13,6 +13,11 @@
 # REVISION  - Project revision (all sources and scripts)
 # *******************************************************
 
+# Default dirs
+BUILD_SCRIPTS_DIR:=RMCIOS-build-scripts
+INTERFACE_DIR:=RMCIOS-interface
+SRC_DIR:=.
+
 # Variable for build revision id
 REVISION_ID:=$(shell git show -s --format=%h)
 REVISION:=Rev:$(REVISION_ID)
@@ -25,9 +30,10 @@ IREVISION=iRev:$(IREVISION_ID)
 SREVISION_ID=$(shell cd $(SRC_DIR); git show -s --format=%h)
 SREVISION=sRev:$(SREVISION_ID)
 
-include compile_date.mk
+include $(BUILD_SCRIPTS_DIR)/compile_date.mk
 
 # set version string
-VERSION_STR:="$(REVISION)\\,Built:$(COMPILE_DATETIME)\\,$(SREVISION)\\,$(IREVISION)"
+VERSION_STR:="$(REVISION) Built:$(COMPILE_DATETIME) $(SREVISION) $(IREVISION)"
+
 export
 

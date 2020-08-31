@@ -1,14 +1,14 @@
 GCC?=gcc
 
-objects := $(wildcard *.c) # Right
-# RMCIOS interface sources
+objects := $(wildcard *.c) 
 INTERFACE_DIR:=RMCIOS-interface
-SOURCES+= string-conversion.c 
+BUILD_SCRIPTS_DIR:=RMCIOS-build-scripts
+SOURCES+= ../string-conversion.c 
 SOURCES+= $(INTERFACE_DIR)/RMCIOS-functions.c
-include version_str.mk
+include $(BUILD_SCRIPTS_DIR)/version_str.mk
 
 :: Output
-OUTPUT_DIR:=$(OUTPUT_PATH)/modules
+OUTPUT_DIR:=./
 OUTPUT_FILE:=$(FILENAME).dll
 
 # Compiler flags
