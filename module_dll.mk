@@ -1,4 +1,4 @@
-GCC?=gcc
+GCC?=${TOOL_PREFIX}gcc
 
 objects := $(wildcard *.c) 
 INTERFACE_DIR:=RMCIOS-interface
