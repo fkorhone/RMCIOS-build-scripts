@@ -3,7 +3,6 @@ GCC?=gcc
 objects := $(wildcard *.c) 
 INTERFACE_DIR:=RMCIOS-interface
 BUILD_SCRIPTS_DIR:=RMCIOS-build-scripts
-SOURCES+= ../string-conversion.c 
 SOURCES+= $(INTERFACE_DIR)/RMCIOS-functions.c
 include $(BUILD_SCRIPTS_DIR)/version_str.mk
 
